@@ -1,12 +1,182 @@
+@import 'mixin.scss';
+
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 1463px;
+  background-image: url("~/public/pngwing.png");
+  background-repeat: no-repeat;
+  background-position: top 20px right;
+  background-size: contain;
+  @include responsive(tablet) {
+    background-size: auto;
+    background-position: top right -140px;
+  }
+  @include responsive(phone) {
+    background-size: auto;
+    background-position: bottom;
+  }
+
 }
 
+.backimagediv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 1113px;
+  min-height: 1548px;
+  background-image: url("~/public/pngwing.png");
+  background-repeat: no-repeat;
+  background-position: top 20px right;
+}
+
+.loginDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  margin-left: 23%;
+  @include responsive(tablet) {
+    margin-left: 35%;
+  }
+  @include responsive(phone) {
+    margin-left: 20%;
+  }
+}
+
+.logoDiv {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  margin-left: 45%;
+  @include responsive(tablet) {
+    margin-left: 40%;
+  }
+  @include responsive(phone) {
+    margin-left: 30%;
+  }
+}
+
+.titleDiv {
+  margin-bottom: 100px;
+  margin-left: 13%;
+  @include responsive(tablet) {
+    margin-left: 8%;
+  }
+}
+
+.bienvenueTitle {
+  color: #868686;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.welcomeTitle {
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.japaneseTitle {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 80px;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 230px;
+  height: 28px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d2d2d2;
+  outline: 0;
+  font-size: 16px;
+  color: #212121;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+  font-size: 16px;
+  cursor: text;
+  top: 20px;
+}
+
+
+.form__field:focus~.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: #767676;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: #767676;
+}
+
+.form__field:focus~.form__label {
+  color: #323131;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-bottom: 2px solid #323131;
+}
+
+.submitDiv {
+  margin-top: 75px;
+  margin-left: -15px;
+}
+
+.submitButton {
+  width: 258px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1E1E1E 0%, #424242 100%);
+  color: #FFF;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 .description {
   display: inherit;
   justify-content: inherit;
@@ -107,6 +277,7 @@
 .logo {
   position: relative;
 }
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -178,11 +349,9 @@
     border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
+    background: linear-gradient(to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5));
     background-clip: padding-box;
     backdrop-filter: blur(24px);
   }
@@ -193,11 +362,9 @@
     inset: auto 0 0;
     padding: 2rem;
     height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgb(var(--background-end-rgb)) 40%);
     z-index: 1;
   }
 }
@@ -223,6 +390,7 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
