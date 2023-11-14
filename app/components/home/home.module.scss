@@ -1,0 +1,177 @@
+@import '../../mixin.scss';
+@import '../../animation.scss';
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 1463px;
+    background-image: url("~/public/images/pngwing.png");
+    background-repeat: no-repeat;
+    background-position: top right -140px;
+    background-size: contain;
+
+    @include responsive(tablet) {
+        background-size: auto;
+    }
+
+    @include responsive(phone) {
+        background-size: auto;
+        background-position: bottom;
+    }
+}
+
+.loginDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    margin-left: 23%;
+
+    @include responsive(tablet) {
+        margin-left: 35%;
+    }
+
+    @include responsive(phone) {
+        margin-left: 20%;
+    }
+
+    animation: fade-up 1s;
+}
+
+.logoDiv {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 45%;
+
+    @include responsive(tablet) {
+        margin-left: 40%;
+    }
+
+    @include responsive(phone) {
+        margin-left: 30%;
+    }
+
+    animation: fade-down 1s;
+}
+
+.titleDiv {
+    margin-bottom: 100px;
+    margin-left: 13%;
+
+    @include responsive(tablet) {
+        margin-left: 8%;
+    }
+
+    animation: fade-right 1s;
+}
+
+.bienvenueTitle {
+    color: #868686;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.welcomeTitle {
+    color: #000;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.japaneseTitle {
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 80px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 230px;
+    height: 28px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #d2d2d2;
+    outline: 0;
+    font-size: 16px;
+    color: #212121;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 16px;
+    cursor: text;
+    top: 20px;
+}
+
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 12px;
+    color: #767676;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 12px;
+    color: #767676;
+}
+
+.form__field:focus~.form__label {
+    color: #323131;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    border-bottom: 2px solid #323131;
+}
+
+.submitDiv {
+    margin-top: 75px;
+    margin-left: -15px;
+}
+
+.submitButton {
+    width: 258px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #1E1E1E 0%, #424242 100%);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}

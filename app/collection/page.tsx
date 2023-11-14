@@ -1,13 +1,13 @@
 import React from 'react'
-import variables from '../variables.module.scss'
-import Link from 'next/link';
+import { ApolloWrapper } from '../lib/apollo-wrapper'
+import CollectionCards from '../components/collectionCards'
 
 const Collection = () => {
     return (
-    <div className={variables.title} >collection
-    <a href="/" >signin</a>
-    </div>
-    
+        <ApolloWrapper>
+            <CollectionCards />
+        </ApolloWrapper>
+
     )
 }
 
